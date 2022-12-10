@@ -1,0 +1,132 @@
+.attribution { margin-top:2rem;font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-size: 14px;
+    font-family: "Montserrat" , sans-serif;
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* to apply above 2 properties we have to set a height to align the elements center vertically */
+    min-height: calc(100vh - 0.1px); 
+    /* instead of vh because there are some screen that probably going to be less the this(vh) can cause overflow so use cal(100-0.1px) the evaluate results are in pixel and not vh */
+    margin: 0 1.5rem;
+
+}
+/* button don't take different font family from the body  */
+button {
+    font-family: inherit;
+    /* font-family: "Montserrat" , sans-serif; */
+}
+h1{
+    color:  hsl(212, 21%, 14%);
+}
+.price{
+    color:hsl(158, 36%, 37%);
+}
+h1, .price{
+    font-family: "Fraunces" , sans-serif;
+}
+h2{
+     color: hsl(228, 12%, 48%);
+     font-weight: 500;
+     text-transform: uppercase;
+     letter-spacing: .3rem ;
+     margin: 0.5rem 0;
+     font-size: .8rem;
+}
+p{
+    color: hsl(228, 12%, 48%);
+    line-height: 1.8;
+}
+img{
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0 ;
+}
+.container h1{
+    margin-bottom: .8rem;
+    font-size: 2rem
+}
+.container{
+    /* without this "max-width: 500px;"  the container will grow until all the elements can fit on one line */
+    max-width: 350px;
+}
+.container article:first-child{
+    border-radius: 1rem 1rem 0 0 ;
+    /* border: 10px solid */
+}
+.container article:last-child{
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -1rem;
+}
+.container p{
+    margin-bottom: 1.5rem;
+}
+.container ul{
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: center; /* if the size of a ul> li element increases , the next elements will aligned center according to the height  */
+    /* justify-content: center; */
+}
+.container ul li:first-child{
+    font-size: 2rem;
+    margin-right: 1.5rem;
+}
+.container ul li:nth-child(2){
+    color: hsl(228, 12%, 48%);
+    text-decoration: line-through;
+}
+.container .btn{
+    background-color:hsl(158, 36%, 37%);
+    width: 100%;
+    color: #fff;
+    padding: .625rem 2rem;
+    border-radius: .625rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* same as we aligned ul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .btn:hover{
+    background:hsl(157, 37%, 22%);;
+}
+.container .btn img{
+    margin-right: .5rem;
+}
+@media only screen and (min-width: 640px) {
+    .container{
+        max-width: 600px;
+        display: grid ;
+        grid-template-columns: repeat(2 ,1fr);
+    }
+
+    .container article:first-child, .container article:first-child img{
+    border-radius: 1rem  0 0 1rem ;
+    height: 100%;
+    }
+    .container article:last-child{
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 0  1rem 1rem 0;
+        margin-top: 0rem;
+    }
+    /* picture img{
+        height:100
+    } */
+}
